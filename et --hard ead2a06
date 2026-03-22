@@ -1,0 +1,17 @@
+[33mead2a06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m984a7c6[m HEAD@{1}: reset: moving to HEAD~1
+[33m347a5ed[m HEAD@{2}: commit: Order Model commit
+[33m984a7c6[m HEAD@{3}: reset: moving to origin/main
+[33mb8a56ea[m HEAD@{4}: reset: moving to HEAD
+[33mb8a56ea[m HEAD@{5}: rebase (abort): returning to refs/heads/main
+[33mb8a56ea[m HEAD@{6}: rebase (abort): returning to refs/heads/main
+[33m984a7c6[m HEAD@{7}: commit (amend): MenuCategory Model created
+[33mb8a56ea[m HEAD@{8}: reset: moving to b8a56ea
+[33mb8a56ea[m HEAD@{9}: pull: Fast-forward
+[33mead2a06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{10}: reset: moving to HEAD~1
+[33mb8a56ea[m HEAD@{11}: pull: Fast-forward
+[33mead2a06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{12}: reset: moving to HEAD~1
+[33m1e1d1ae[m HEAD@{13}: commit:
+[33mead2a06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{14}: reset: moving to HEAD~1
+[33mb8a56ea[m HEAD@{15}: commit: Initial commit
+[33mead2a06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{16}: clone: from https://github.com/SHUBHAM-NAGDIYA/restaurant_management_project
