@@ -1,13 +1,11 @@
 from django.db import models
 
-# Order models here.
+class Coupon(models.Model):
+    code = models.CharField(max_length=100, unique=True)
+    discount_percent = models.DecimalField(decimal_places=2)
+    is_active = models.BooleanField(default=True)
+    valid_from = models.DateField()
+    valid_until = models.DateField()
 
-
-# OrderStaus
-class OrderStatus(models.Model):
-    name = models.CharField(max_length=100,unique=True)
-
-# I had made Order Table  at the time of creating order status
-# Orders    
-class Order(models.Model):
-    status = models.ForeignKey(OrderStatus, on_delete=models.SET_NULL, null=True, on_delete = models.SET_NULL, null = True)
+    def __str__(self):
+        return self.code
