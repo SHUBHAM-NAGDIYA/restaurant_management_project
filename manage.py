@@ -1,22 +1,44 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
-import os
-import sys
+#-------------------------------commit id---------------------------------------#
+
+c7bad7ee6e08fb44c4b3fc2d6ffb6981d66cbf59
+
+#--------------------------------Menu Caegory View End Point-----------------------------------#
+from rest_framework.generics import ListAPIView
+from .models import MenuCategory
+from serializers.serializer import Menu_Serializer
+
+class MenuCategoryView(ListAPIView):
+    query_set = MenuCategory.objects.all()
+    serializer_class = Menu_Serializer
 
 
-def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'restaurant_management.settings')
-    try:
-        from django.core.management import execute_from_command_line
-    except ImportError as exc:
-        raise ImportError(
-            "Couldn't import Django. Are you sure it's installed and "
-            "available on your PYTHONPATH environment variable? Did you "
-            "forget to activate a virtual environment?"
-        ) from exc
-    execute_from_command_line(sys.argv)
+#--------------------------------Menu_Serializer--------------------------------#
+
+from rest_framework import serializers
+from home.models import MenuCategory
+
+class Menu_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = MenuCategory
+        fields = ['name']
+
+#-------------------------------URL's-------------------------------------------#
+
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('menu-categories/', MenuCategoryView.as_view(), name = 'menu-categories')
+    ]
+
+#-------------------------------------------------------------------------------#
 
 
-if __name__ == '__main__':
-    main()
+
+
+
+
+
+
+
+
