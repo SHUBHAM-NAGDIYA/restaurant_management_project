@@ -1,44 +1,25 @@
 #-------------------------------commit id---------------------------------------#
 
-c7bad7ee6e08fb44c4b3fc2d6ffb6981d66cbf59
+4905abbd01b19d444e30c38c2826369e11adcf18
 
-#--------------------------------Menu Caegory View End Point-----------------------------------#
-from rest_framework.generics import ListAPIView
-from .models import MenuCategory
-from serializers.serializer import Menu_Serializer
+#--------------------------------utils.py---------------------------------------#
+import string
+import secrets
+from django.apps import apps
 
-class MenuCategoryView(ListAPIView):
-    query_set = MenuCategory.objects.all()
-    serializer_class = Menu_Serializer
+def generate_coupon_code(lenght=10):
+    """
+    Generate a unique alphnumeric coupon oce
+    """
+    characters = string.ascii_uppercase + string.digits
 
+    Coupon = apps.get_model('orders', 'Coupon')
 
-#--------------------------------Menu_Serializer--------------------------------#
+    while True:
+        coupon_code = ''.join(secrets.choice(characters) for _ in range(length))
 
-from rest_framework import serializers
-from home.models import MenuCategory
-
-class Menu_Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = MenuCategory
-        fields = ['name']
-
-#-------------------------------URL's-------------------------------------------#
-
-from django.urls import path
-from .views import *
-
-urlpatterns = [
-    path('menu-categories/', MenuCategoryView.as_view(), name = 'menu-categories')
-    ]
+        #check uniqueness in DB
+        if not Coupon.objects.filter(code=coupon_code).exists():
+            return coupon_code
 
 #-------------------------------------------------------------------------------#
-
-
-
-
-
-
-
-
-
-
